@@ -2,95 +2,45 @@ import java.util.Scanner;
 
 public class launchcalculator {
 
-    public static void addition() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Enter first number:");
-        int a = scan.nextInt();
-
-        System.out.println("Enter second number:");
-        int b = scan.nextInt();
-
-        int c = a + b;
-        System.out.println("Result = " + c);
+    // Addition
+    static double addition(double a, double b) {
+        return a + b;
     }
 
-    public static void subtraction() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Enter first number:");
-        int a = scan.nextInt();
-
-        System.out.println("Enter second number:");
-        int b = scan.nextInt();
-
-        int c = a - b;
-        System.out.println("Result = " + c);
+    // Subtraction
+    static double subtraction(double a, double b) {
+        return a - b;
     }
 
-    public static void multiplication() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Enter first number:");
-        int a = scan.nextInt();
-
-        System.out.println("Enter second number:");
-        int b = scan.nextInt();
-
-        int c = a * b;
-        System.out.println("Result = " + c);
+    // Multiplication
+    static double multiplication(double a, double b) {
+        return a * b;
     }
 
-    public static void division() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Enter first number:");
-        int a = scan.nextInt();
-
-        System.out.println("Enter second number:");
-        int b = scan.nextInt();
-
-        if (b == 0) {
-            System.out.println("Cannot divide by zero.");
-        } else {
-            int c = a / b;
-            System.out.println("Result = " + c);
-        }
+    // Division
+    static double division(double a, double b) {
+        return a / b;
     }
 
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("1. Addition");
-        System.out.println("2. Subtraction");
-        System.out.println("3. Multiplication");
-        System.out.println("4. Division");
+        System.out.print("Enter first number: ");
+        double a = sc.nextDouble();
 
-        System.out.println("Enter your choice:");
-        int choice = scan.nextInt();
+        System.out.print("Enter second number: ");
+        double b = sc.nextDouble();
 
-        switch (choice) {
-            case 1:
-                addition();
-                break;
+        System.out.println("Addition = " + addition(a, b));
+        System.out.println("Subtraction = " + subtraction(a, b));
+        System.out.println("Multiplication = " + multiplication(a, b));
 
-            case 2:
-                subtraction();
-                break;
+        if (b != 0)
+            System.out.println("Division = " + division(a, b));
+        else
+            System.out.println("Division is not possible by zero.");
 
-            case 3:
-                multiplication();
-                break;
-
-            case 4:
-                division();
-                break;
-
-            default:
-                System.out.println("Invalid choice.");
-        }
-
-        scan.close();
+        sc.close();
     }
 }
