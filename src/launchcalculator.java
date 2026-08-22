@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//this is a program 
+//this is a updated program
 public class launchcalculator {
 
     // Addition
